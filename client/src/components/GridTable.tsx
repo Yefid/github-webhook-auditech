@@ -106,7 +106,8 @@ export default function GridTable(props: DataGridProps) {
 				getRowId={(row) => row._id}
 				disableSelectionOnClick
 				// rowsPerPageOptions={[5]}
-				pageSize={10}
+				// pageSize={10}
+				// autoHeight
 			/>
 		</div>
 	);
