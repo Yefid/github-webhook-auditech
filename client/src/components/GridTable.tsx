@@ -1,6 +1,5 @@
 /* eslint-disable no-underscore-dangle */
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import {
 	DataGrid,
 	GridColDef,

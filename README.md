@@ -32,7 +32,7 @@ In order to make use of the system you need to:
 
 ### Hookdeck CLI
 
-7. Install Hookdeck CLI in order to allow webhook forwording to your localhost server.
+7. Install Hookdeck CLI in order to allow webhook forwarding to your localhost server.
 
 8. Listen to the localhost server in port 8000 with this command : "hookdeck listen 8000"
 9. Create the "webhook url" with the path of "/github-webhook-listener"
@@ -50,4 +50,4 @@ In order to make use of the system you need to:
 
 ## Screen Shots
 
-![alt text](https://res.cloudinary.com/dnbuonpih/image/upload/v1642187499/Capture_usyruv.png)
+![alt text](https://res.cloudinary.com/dnbuonpih/image/upload/v1642194428/Capture_a2fi0v.png)
