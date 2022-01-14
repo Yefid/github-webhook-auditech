@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+# Github Webhook Listener + Viewer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A system that receives POST requests from github webhooks to a backend server, store the data in a database, takes a screenshot of the pull request html page and present the data as a datagrid.
 
-## Available Scripts
+Frontend - Reactjs
+Backend - Nodejs, Express
+Helpers - puppeteer ,cloudinary CDN
+Database - MongoDB
 
-In the project directory, you can run:
+- Demo link : https://github-webhooks-auditech.netlify.app/
+  Enter and give it a few second to wake up (heroku)
+- Demo repository link : https://github.com/Yefid/demo-repository/pulls
+  for making pull requests
 
-### `npm start`
+## Architecture Diagram
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![alt text](https://res.cloudinary.com/dnbuonpih/image/upload/v1642178101/arch_zl1qlk.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Instructions
 
-### `npm test`
+In order to make use of the system you need to:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Download the repository
+2. Create mongodb cluster with a connection string copy it to MONGOURI varible in a .env file
+3. Create "webhooks" collection and add document as follow :
 
-### `npm run build`
+4. Create cloudinary account and copy CLOUDINARY_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET to a .env file.
+5. Install client and server dependencies with
+   . `npm i`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+6. "npm start" both server and client
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Hookdeck CLI
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+7. Install Hookdeck CLI in order to allow webhook forwording to your localhost server.
 
-### `npm run eject`
+8. Listen to the localhost server in port 8000 with this command : "hookdeck listen 8000"
+9. Create the "webhook url" with the path of "/github-webhook-listener"
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+10. Copy the generated "webhook url" and save it for later.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Github webhook config
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+11. Go to your repo > settings > webhooks - and paste the webhook url in the Payload URL field.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Show time
 
-## Learn More
+12. Make a pull request
+13. Go to localhost:3000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Screen Shots
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![alt text](https://res.cloudinary.com/dnbuonpih/image/upload/v1642187499/Capture_usyruv.png)

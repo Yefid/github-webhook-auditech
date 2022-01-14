@@ -70,7 +70,7 @@ const columns: GridColDef[] = [
 			</strong>
 		),
 	},
-	{ field: 'pull_request_body', headerName: 'Body', width: 130 },
+	{ field: 'pull_request_body', headerName: 'Body', width: 300 },
 
 	{
 		field: 'screenShot',
