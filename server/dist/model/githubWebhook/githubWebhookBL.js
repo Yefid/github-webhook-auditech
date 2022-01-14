@@ -8,6 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+const fs = require('fs');
 const GithubWebhookModel = require('./githubWebhookModel');
 const urlHandler = require('../../helpers/urlHandler');
 const cloudinaryHandler = require('../../helpers/cloudinaryHandler');
@@ -94,6 +95,9 @@ exports.addAction = (payload) => __awaiter(void 0, void 0, void 0, function* () 
     }
     catch (err) {
         console.log(err);
+    }
+    if (imgPath) {
+        fs.unlinkSync(imgPath);
     }
     console.log('finished cloudinaryHandler');
     return new Promise((resolve, reject) => {
